@@ -1,13 +1,14 @@
 import Model from 'ampersand-model'
 import githubMixin from '../helpers/github-mixin'
 import SlideCollection from './slide-collection'
+import config from '../config'
 
 // export default Model.extend(githubMixin, {
 export default Model.extend({
   idAttribute: '_id',
 
   url () {
-    return 'http://localhost:4000/collections/manifests' + this._id
+    return config.manifestStore + '/' + this._id
   },
 
   props: {

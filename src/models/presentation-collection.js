@@ -1,10 +1,11 @@
 import Collection from 'ampersand-rest-collection'
 import Presentation from './presentation'
 import githubMixin from '../helpers/github-mixin'
+import config from '../config'
 
 //export default Collection.extend(githubMixin, {
 export default Collection.extend({
-  url: 'http://localhost:4000/collections/manifests',
+  url: config.manifestStore,
 
   model: Presentation,
 
