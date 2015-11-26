@@ -1,6 +1,7 @@
 import Model from 'ampersand-model'
 import RepoCollection from './repo-collection'
 import PresentationCollection from './presentation-collection'
+import IIIFCollection from './iiif-collection'
 import githubMixin from '../helpers/github-mixin'
 
 export default Model.extend(githubMixin, {
@@ -23,7 +24,8 @@ export default Model.extend(githubMixin, {
 
   collections: {
     repos: RepoCollection,
-    presentations: PresentationCollection
+    presentations: PresentationCollection,
+    //iiifc: IIIFCollection
   },
 
   onChangeToken () {
@@ -36,6 +38,7 @@ export default Model.extend(githubMixin, {
       this.fetch()
       this.repos.fetch()
       this.presentations.fetch()
+      //this.iiifc.fetch()
     }
   }
 

@@ -2,15 +2,17 @@ import Model from 'ampersand-model'
 import githubMixin from '../helpers/github-mixin'
 import SlideCollection from './slide-collection'
 
-export default Model.extend(githubMixin, {
+// export default Model.extend(githubMixin, {
+export default Model.extend({
+  idAttribute: '_id',
+
   url () {
-    return 'https://api.github.com/repos/' + this.full_name
+    return 'http://localhost:4000/collections/manifests' + this._id
   },
 
   props: {
-    id: 'number',
-    name: 'string',
-    full_name: 'string'
+    _id: 'string',
+    label: 'string'
   },
 
   collections: {
@@ -19,9 +21,9 @@ export default Model.extend(githubMixin, {
 
   derived: {
     app_url: {
-      deps: ['full_name'],
+      deps: ['_id'],
       fn () {
-        return 'presentation/' + this.full_name
+        return 'presentation/' + this._id
       }
     }
   },

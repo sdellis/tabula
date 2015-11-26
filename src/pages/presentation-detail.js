@@ -26,7 +26,7 @@ export default React.createClass({
 
     return (
       <div className='container'>
-       <h1>{presentation.full_name} Slides</h1>
+       <h1>{presentation.label} Slides</h1>
        <p>
         <button onClick={this.onAddClick} className='button'>Add a Slide</button>
        </p>

@@ -24575,6 +24575,7 @@
 	      this.fetch();
 	      this.repos.fetch();
 	      this.presentations.fetch();
+	      this.iiif - collection.fetch();
 	    }
 	  }
 

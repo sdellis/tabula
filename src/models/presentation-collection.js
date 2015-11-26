@@ -2,8 +2,9 @@ import Collection from 'ampersand-rest-collection'
 import Presentation from './presentation'
 import githubMixin from '../helpers/github-mixin'
 
-export default Collection.extend(githubMixin, {
-  url: 'https://api.github.com/user/repos?sort=desc',
+//export default Collection.extend(githubMixin, {
+export default Collection.extend({
+  url: 'http://localhost:4000/collections/manifests',
 
   model: Presentation,
 

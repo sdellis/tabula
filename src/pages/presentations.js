@@ -18,13 +18,13 @@ export default React.createClass({
         <h1>Presentations Gallery</h1>
         <div>
           {presentations.map((presentation) => {
-            if (presentation.name.startsWith('tabula-')) {
+            //if (presentation.name.startsWith('tabula-')) {
               return (
-                <div key={presentation.id}>
-                  <a href={presentation.app_url}><span className='octicon octicon-repo'></span> {presentation.full_name}</a>
+                <div key={presentation._id}>
+                  <a href={presentation.app_url}><span className='octicon octicon-repo'></span> {presentation.label}</a>
                 </div>
               )
-            }
+            //}
           })}
         </div>
       </div>
