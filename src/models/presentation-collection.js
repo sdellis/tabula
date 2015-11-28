@@ -9,11 +9,11 @@ export default Collection.extend({
 
   model: Presentation,
 
-  getByFullName (fullName) {
-    let model = this.findWhere({full_name: fullName})
+  getByID (id) {
+    let model = this.findWhere({_id: id})
 
     if (!model) {
-      model = new Presentation({full_name: fullName})
+      model = new Presentation({_id: id})
     }
 
     model.fetch()
