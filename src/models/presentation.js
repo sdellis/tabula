@@ -6,6 +6,11 @@ import config from '../config'
 
 // export default Model.extend(githubMixin, {
 export default Model.extend({
+
+  initialize () {
+    this.getManifest // load the manifesto object into this.manifest
+  },
+
   idAttribute: '_id',
 
   url () {
@@ -14,6 +19,9 @@ export default Model.extend({
 
   props: {
     _id: 'string',
+    '@id': 'string',
+    '@context': 'string',
+    '@type': 'string',
     label: 'string',
     thumbnail: 'string',
     viewingHint: 'string',
@@ -32,17 +40,31 @@ export default Model.extend({
         return 'presentation/' + this._id
       }
     },
-    manifest: {
+    subjects: {
+      deps: ['metadata'],
+      fn () {
+        var _this = this
+        _this.subjects = ''
+        _this.metadata.forEach(function(md) {
+              if(md.label === 'Subjects'){
+                _this.subjects = md.value.join(', ')
+              }
+      	     })
+        return _this.subjects
+      }
+    },
+    getManifest: {
       deps: ['_id'],
       fn () {
-        manifesto.loadManifest('http://wellcomelibrary.org/iiif/b18035723/manifest').then(function(manifest) {
-            manifest = manifesto.create(manifest)
-            console.log(manifest.getLabel())
-            return manifest
+        var _this = this
+        manifesto.loadManifest(config.manifestStore + '/' + this._id).then(function(manifest) {
+            _this.manifest = manifesto.create(manifest)
+            return _this.manifest
           },
           function(error) {
             console.error("Failed!", error);
           });
+        this.manifest = _this.manifest
       }
     }
   },
