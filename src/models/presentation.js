@@ -1,7 +1,7 @@
 import Model from 'ampersand-model'
 import manifesto from '../../node_modules/manifesto.js/dist/server/manifesto.js'
-import githubMixin from '../helpers/github-mixin'
-import SlideCollection from './slide-collection'
+// import githubMixin from '../helpers/github-mixin'
+// import SlideCollection from './slide-collection'
 import config from '../config'
 
 // export default Model.extend(githubMixin, {
@@ -28,11 +28,11 @@ export default Model.extend({
     metadata: 'array',
     sequences: 'array'
   },
-
+/*
   collections: {
     slides: SlideCollection
   },
-
+*/
   derived: {
     app_url: {
       deps: ['_id'],
@@ -43,14 +43,13 @@ export default Model.extend({
     subjects: {
       deps: ['metadata'],
       fn () {
-        var _this = this
-        _this.subjects = ''
-        _this.metadata.forEach(function(md) {
+        var s = ''
+        this.metadata.forEach(function(md) {
               if(md.label === 'Subjects'){
-                _this.subjects = md.value.join(', ')
+                s = md.value.join(', ')
               }
       	     })
-        return _this.subjects
+        return s
       }
     },
     getManifest: {
@@ -67,11 +66,12 @@ export default Model.extend({
         this.manifest = _this.manifest
       }
     }
-  },
+  }
+  /*,
 
   fetch () {
     Model.prototype.fetch.apply(this, arguments)
     this.slides.fetch()
   }
-
+*/
 })

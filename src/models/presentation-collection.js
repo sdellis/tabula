@@ -9,7 +9,7 @@ export default Collection.extend({
 
   model: Presentation,
 
-  getByID (id) {
+  getById (id) {
     let model = this.findWhere({_id: id})
 
     if (!model) {

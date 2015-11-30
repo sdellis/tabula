@@ -29,7 +29,7 @@ export default Router.extend({
     '': 'public',
     'repos': 'repos',
     'presentations': 'presentations',
-    'presentation/:owner/:name': 'presentationDetail',
+    'presentation/:id': 'presentationDetail',
     'login': 'login',
     'logout': 'logout',
     'repo/:owner/:name': 'repoDetail',
@@ -45,10 +45,9 @@ export default Router.extend({
     this.renderPage(<PresentationsPage presentations={app.me.presentations}/>)
   },
 
-  presentationDetail (owner, name) {
-    console.log(owner, name)
-    const presentation = app.me.presentations.getByFullName(owner + '/' + name)
-    this.renderPage(<PresentationDetailPage presentation={presentation} slides={presentation.slides}/>)
+  presentationDetail (id) {
+    const presentation = app.me.presentations.getById(id)
+    this.renderPage(<PresentationDetailPage presentation={presentation}/>)
   },
 
   repos () {
@@ -56,7 +55,6 @@ export default Router.extend({
   },
 
   repoDetail (owner, name) {
-    console.log(owner, name)
     const repo = app.me.repos.getByFullName(owner + '/' + name)
     this.renderPage(<RepoDetailPage repo={repo} labels={repo.labels}/>)
   },

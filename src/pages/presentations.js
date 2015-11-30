@@ -12,7 +12,7 @@ export default React.createClass({
 
   render () {
     const {presentations} = this.props
-    console.log(presentations)
+    
     return (
       <div>
         <h1>Presentations Gallery</h1>
