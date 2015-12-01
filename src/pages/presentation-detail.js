@@ -41,25 +41,13 @@ export default React.createClass({
           <button onClick={this.onAddClick} className='button'>Add a Slide</button>
          </p>
          <ul className="sequence">
-         {presentation.manifest.getSequences().map((sequence) => {
-           sequence.getCanvases().map((canvas) => {
-               canvas.getImages().map((image) => {
-                  return (
-                   <li className="slide"><img src={image.getResource().id}/></li>
-                  )
-               })
-             })
+         {presentation.manifest.getSequences()[0].getThumbs(200).map((thumb) => {
+           return (
+            <li className="slide"><img src={thumb.uri}/></li>
+           )
          })}
          </ul>
          <hr/>
-         <ul className="sequence">
-            <li className="slide">1</li>
-            <li className="slide">2</li>
-            <li className="slide">3</li>
-            <li className="slide">4</li>
-            <li className="slide">5</li>
-            <li className="slide">6</li>
-         </ul>
 
        </div>
     )
