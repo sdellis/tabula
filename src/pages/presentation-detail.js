@@ -48,7 +48,9 @@ export default React.createClass({
          })}
          </ul>
          <hr/>
-
+         {presentation.manifest.getSequences().map((sequence) =>
+           <Sequence sequence={sequence}/>
+         )}
        </div>
     )
   }
