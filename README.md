@@ -6,13 +6,13 @@ Tabula is a "starter kit" for native web applications (aka, "single-page apps") 
 ## About tabula
 Tabula organizes code in an MVC-like way, so developers who are used to Ruby on Rails will find the approach familiar.  The data modeling extends the ever popular and enduring Backbone models and collections. Tabula keeps code simple by adhering to the concepts put forth in Human Javascript, and much credit is due to [Henrik Joreteg](https://joreteg.com/) and the folks at [&yet](https://andyet.com/) in the development of this approach.  Read more at [Ampersand.js](https://ampersandjs.com/).
 
-## Get Started
+### Get Started
 ```
 npm install
 npm start
 ```
 
-## Demo
+### Demo
 You can [log in with your GitHub username](https://tabula.surge.sh) to play with _tabula_.  The demo is in a rudimentary state and is set up as a simple slide show app, although not fully functional yet.  It shows basic integration with GitHub repos (as potential annotation stores) and a Presentation library. This will be completed before the first release.
 
 ## Features
