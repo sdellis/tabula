@@ -34,10 +34,10 @@ One reason why Tabula does not make Manifesto more central to the core library i
 The Tabula demo uses [Repono](https://github.com/sdellis/repono) (formerly Manifesto) as it's storage mechanism. Repono is a simple express.js server with a mongodb data store.  Local storage could also be used without too much configuration.  Other endpoints can easily be configured, but you will likely only be able to "read" and not write to them.
 
 ### React and Hot Loading
-Tabula uses a React view layer, which helps with managing state and performance.  It also uses the react-hot-loader, so that code changes happen instantaneously in the browser, making for easy development.  It also uses Stylus as a CSS pre-processor, which offers lots of power with utmost simplicity.
+Tabula uses a [React](https://facebook.github.io/react/) view layer, which helps with managing state and performance.  It also uses the react-hot-loader, so that code changes happen instantaneously in the browser, making for easy development.  It also uses [Stylus](https://learnboost.github.io/stylus/) as a CSS pre-processor, which offers lots of power with utmost simplicity.
 
 ### Authentication
-Tabula provides an example of authenticating with GitHub's OAuth implementation.  This is a [simple helper](https://github.com/sdellis/tabula/blob/master/src/helpers/github-mixin.js) that should serve as an example for mixing in other types of authentication schemes.
+Tabula provides an example of authenticating with [GitHub's OAuth implementation](https://developer.github.com/v3/oauth/).  This is a [simple helper](https://github.com/sdellis/tabula/blob/master/src/helpers/github-mixin.js) that should serve as an example for mixing in other types of authentication schemes.
 
 ### GitHub as an Annotation "Server"/Endpoint
 One reason we have gone with GitHub as an authentication example is because GitHub can be used, with some facade-pattern-based middleware (currently vaporware), as an annotation endpoint.  The current options for annotation servers with authentication is sparse, and can be hard to configure.  GitHub provides a fairly simple API that can be used to create annotations.  While one may authenticate using GitHub credentials, the ability to use it as an annotation store is still under development.
