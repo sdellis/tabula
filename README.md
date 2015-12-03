@@ -1,4 +1,5 @@
-![tabula icon](tabula.png?raw=true) #tabula
+![tabula icon](tabula.png?raw=true) Tabula
+=============================================================================
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 Tabula is a "starter kit" for native web applications (aka, "single-page apps") that make use of the IIIF Presentation API.
