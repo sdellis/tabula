@@ -13,14 +13,16 @@ This should get you going:
 
 Tabula is a "starter kit" for native web applications (aka, "single-page apps") that make use of the IIIF Presentation API.
 
-Tabula organizes code in an MVC-like way, so developers who are used to Ruby on Rails will find the approach familiar.  The data modeling extends the ever popular and enduring Backbone models and collections. Tabula keeps code simple by adhering to the concepts put forth in Human Javascript, and much credit is due to [Henrik Joreteg](https://joreteg.com/) and the folks at []&yet](https://andyet.com/) in the development of this approach.  Read more at [Ampersand.js](https://ampersandjs.com/).
+Tabula organizes code in an MVC-like way, so developers who are used to Ruby on Rails will find the approach familiar.  The data modeling extends the ever popular and enduring Backbone models and collections. Tabula keeps code simple by adhering to the concepts put forth in Human Javascript, and much credit is due to [Henrik Joreteg](https://joreteg.com/) and the folks at [&yet](https://andyet.com/) in the development of this approach.  Read more at [Ampersand.js](https://ampersandjs.com/).
 
 ## Features
 
 ### Manifesto Integration
 If you are just building a "read-only" application, you can take advantage of the wonderful [Manifesto](http://blog.edsilv.com/manifesto/) library, developed by the Universal Viewer lead developer, Ed Silverton (Digerati).  Once you have retrieved your manifests using ```fetch()```, you have access to all the Manifesto methods.  Here's a usage example for printing out a label:
 
-```this.manifest.getLabel()```
+```
+this.manifest.getLabel()
+```
 
 ### Manifest Authoring
 One reason why Tabula does not make Manifesto more central to the core library is because it does not provide any "setter" methods.  This may change in the future, but it has been more expedient, practical, and simple to use the Backbone/Ampersand architecture and all of the "freebies" that come with it, including authoring (setter) features.
