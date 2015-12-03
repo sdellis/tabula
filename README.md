@@ -37,8 +37,8 @@ Tabula provides an example of authenticating with GitHub's OAuth implementation.
 ### GitHub as an Annotation "Server"/Endpoint
 One reason we have gone with GitHub as an authentication example is because GitHub can be used, with some facade-pattern-based middleware (currently vaporware), as an annotation endpoint.  The current options for annotation servers with authentication is sparse, and can be hard to configure.  GitHub provides a fairly simple API that can be used to create annotations.  While one may authenticate using GitHub credentials, the ability to use it as an annotation store is still under development.
 
-### Unit Tests
-Tests are coming! They are the last step before official release of 1.0.0.
+### Contributing
+Contributions will be welcome after the initial release.  Tabula uses [Standard](http://standardjs.com/) to enforce a simple code style.  Unit tests are coming! They are the last step before official release of 1.0.0.  All pull requests will need to pass tests and adhere to the Standard style guide.
 
 ## Roadmap
 As a "starter kit", Tabula seeks to be a simple reference application for the IIIF Presentation API.  The name _Tabula_ (latin for slate or tablet) was selected as a possible "namespace" for a suite of similar applications because it is a tablet with many possibilities.  The notion of _tabula rasa_ ("clean state" or "blank tablet") connotes a view of mind as originally blank, on which experience leaves marks.  This notion is the basis of Empiricism and ultimately, the scientific method.  Plans for instruction-oriented slide show (Tabula Eruditio) and musical "fakebook" (Tabula Musica) extension apps are already under way.
