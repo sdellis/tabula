@@ -1,17 +1,20 @@
 # tabula
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
-IIIF Slideshow App
+Tabula is a "starter kit" for native web applications (aka, "single-page apps") that make use of the IIIF Presentation API.
 
-This should get you going:
+## Get Started
 
-```npm install```
+```
+npm install
+npm start
+```
 
-```npm start```
+## Demo
+
+You can [log in with your GitHub username](https://tabula.surge.sh) to play with _tabula_.
 
 ## About tabula
-
-Tabula is a "starter kit" for native web applications (aka, "single-page apps") that make use of the IIIF Presentation API.
 
 Tabula organizes code in an MVC-like way, so developers who are used to Ruby on Rails will find the approach familiar.  The data modeling extends the ever popular and enduring Backbone models and collections. Tabula keeps code simple by adhering to the concepts put forth in Human Javascript, and much credit is due to [Henrik Joreteg](https://joreteg.com/) and the folks at [&yet](https://andyet.com/) in the development of this approach.  Read more at [Ampersand.js](https://ampersandjs.com/).
 
@@ -44,7 +47,3 @@ Contributions will be welcome after the initial release.  Tabula uses [Standard]
 
 ## Roadmap
 As a "starter kit", Tabula seeks to be a simple reference application for the IIIF Presentation API.  The name _Tabula_ (latin for slate or tablet) was selected as a possible "namespace" for a suite of similar applications because it is a tablet with many possibilities.  The notion of _tabula rasa_ ("clean state" or "blank tablet") connotes a view of mind as originally blank, on which experience leaves marks.  This notion is the basis of Empiricism and ultimately, the scientific method.  Plans for instruction-oriented slide show (Tabula Eruditio) and musical "fakebook" (Tabula Musica) extension apps are already under way.
-
-## Demo
-
-You can [log in with your GitHub username](https://tabula.surge.sh) to play with _tabula_.
