@@ -5,7 +5,7 @@
 Tabula is a "starter kit" for native web applications (aka, "single-page apps") that make use of the IIIF Presentation API.
 
 ## About tabula
-Tabula organizes code in an MVC-like way, so developers who are used to Ruby on Rails will find the approach familiar.  The data modeling extends the ever popular and enduring Backbone models and collections. Tabula keeps code simple by adhering to the concepts put forth in Human Javascript, and much credit is due to [Henrik Joreteg](https://joreteg.com/) and the folks at [&yet](https://andyet.com/) in the development of this approach.  Read more at [Ampersand.js](https://ampersandjs.com/).
+Tabula organizes code in an MVC-like way, so developers who are used to Ruby on Rails (and similar frameworks) will find the approach familiar.  The data modeling extends the ever popular and enduring Backbone models and collections. Tabula keeps code simple by adhering to the concepts put forth in Human Javascript, and much credit is due to [Henrik Joreteg](https://joreteg.com/) and the folks at [&yet](https://andyet.com/) in the development of this approach.  Read more at [Ampersand.js](https://ampersandjs.com/).
 
 ### Get Started
 ```
