@@ -51,6 +51,12 @@ export default Model.extend({
         return s
       }
     },
+    /****
+    // The getManifest() method is for demo purposes, showing how one can use
+    // the Manifesto library within this app by attaching a Manifesto object,
+    // with all its methods to this model.
+    // i.e. this.manifest.getLabel()
+    ****/
     getManifest: {
       deps: ['_id'],
       fn () {
