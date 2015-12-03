@@ -29,10 +29,10 @@ export default Router.extend({
     '': 'public',
     'repos': 'repos',
     'presentations': 'presentations',
-    'presentation/:id': 'presentationDetail',
+    'presentations/:id': 'presentationDetail',
     'login': 'login',
     'logout': 'logout',
-    'repo/:owner/:name': 'repoDetail',
+    'repos/:owner/:name': 'repoDetail',
     'auth/callback?:query': 'authCallback',
     '*fourohfour': 'fourOhfour'
   },

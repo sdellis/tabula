@@ -36,7 +36,7 @@ export default Model.extend({
     app_url: {
       deps: ['_id'],
       fn () {
-        return 'presentation/' + this._id
+        return 'presentations/' + this._id
       }
     },
     subjects: {

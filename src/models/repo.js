@@ -21,7 +21,7 @@ export default Model.extend(githubMixin, {
     app_url: {
       deps: ['full_name'],
       fn () {
-        return 'repo/' + this.full_name
+        return 'repos/' + this.full_name
       }
     }
   },
