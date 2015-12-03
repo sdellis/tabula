@@ -12,7 +12,7 @@ npm start
 
 ## Demo
 
-You can [log in with your GitHub username](https://tabula.surge.sh) to play with _tabula_.
+You can [log in with your GitHub username](https://tabula.surge.sh) to play with _tabula_.  The demo is in a rudimentary state and is set up as a simple slide show app, although not fully functional yet.  It shows basic integration with GitHub repos (as potential annotation stores) and a Presentation library. This will be completed before the first release.
 
 ## About tabula
 
@@ -28,7 +28,7 @@ this.manifest.getLabel()
 ```
 
 ### Manifest Authoring
-One reason why Tabula does not make Manifesto more central to the core library is because it does not provide any "setter" methods.  This may change in the future, but it has been more expedient, practical, and simple to use the Backbone/Ampersand architecture and all of the "freebies" that come with it, including authoring (setter) features.
+One reason why Tabula does not make Manifesto more central to the core library is because it does not provide any "setter" methods.  This may change in the future, but it has been more expedient, practical, and simple to use the Backbone/Ampersand architecture and all of the "freebies" that come with it, including authoring (setter) features. Authoring is under development.
 
 ### Persistence
 The Tabula demo uses [Repono](https://github.com/sdellis/repono) (formerly Manifesto) as it's storage mechanism. Repono is a simple express.js server with a mongodb data store.  Local storage could also be used without too much configuration.  Other endpoints can easily be configured, but you will likely only be able to "read" and not write to them.
