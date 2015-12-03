@@ -1,6 +1,6 @@
 import Model from 'ampersand-model'
 import RepoCollection from './repo-collection'
-import PresentationCollection from './presentation-collection'
+import ManifestCollection from './manifest-collection'
 import githubMixin from '../helpers/github-mixin'
 
 export default Model.extend(githubMixin, {
@@ -23,7 +23,7 @@ export default Model.extend(githubMixin, {
 
   collections: {
     repos: RepoCollection,
-    presentations: PresentationCollection
+    presentations: ManifestCollection
   },
 
   onChangeToken () {
