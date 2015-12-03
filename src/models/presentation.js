@@ -1,7 +1,7 @@
 import Model from 'ampersand-model'
 import manifesto from '../../node_modules/manifesto.js/dist/server/manifesto.js'
 // import githubMixin from '../helpers/github-mixin'
-// import SlideCollection from './slide-collection'
+import SequenceCollection from './sequence-collection'
 import config from '../config'
 
 // export default Model.extend(githubMixin, {
@@ -25,14 +25,13 @@ export default Model.extend({
     label: 'string',
     thumbnail: 'string',
     viewingHint: 'string',
-    metadata: 'array',
-    sequences: 'array'
+    metadata: 'array'
   },
-/*
+
   collections: {
-    slides: SlideCollection
+    sequences: SequenceCollection
   },
-*/
+
   derived: {
     app_url: {
       deps: ['_id'],
