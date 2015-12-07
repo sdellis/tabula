@@ -1,9 +1,7 @@
 import Collection from 'ampersand-rest-collection'
 import Manifest from './manifest'
-import githubMixin from '../helpers/github-mixin'
-import config from '../config'
+import config from '../../config'
 
-//export default Collection.extend(githubMixin, {
 export default Collection.extend({
   url: config.manifestStore,
 

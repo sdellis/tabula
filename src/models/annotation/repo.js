@@ -1,5 +1,5 @@
 import Model from 'ampersand-model'
-import githubMixin from '../helpers/github-mixin'
+import githubMixin from '../../helpers/github-mixin'
 import LabelCollection from './label-collection'
 
 export default Model.extend(githubMixin, {

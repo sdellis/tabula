@@ -1,10 +1,8 @@
 import Model from 'ampersand-model'
-import manifesto from '../../node_modules/manifesto.js/dist/server/manifesto.js'
-// import githubMixin from '../helpers/github-mixin'
+import manifesto from '../../../node_modules/manifesto.js/dist/server/manifesto.js'
 import SequenceCollection from './sequence-collection'
-import config from '../config'
+import config from '../../config'
 
-// export default Model.extend(githubMixin, {
 export default Model.extend({
 
   initialize () {

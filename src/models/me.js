@@ -1,6 +1,6 @@
 import Model from 'ampersand-model'
-import RepoCollection from './repo-collection'
-import ManifestCollection from './manifest-collection'
+import RepoCollection from './annotation/repo-collection'
+import ManifestCollection from './presentation/manifest-collection'
 import githubMixin from '../helpers/github-mixin'
 
 export default Model.extend(githubMixin, {
