@@ -7,7 +7,17 @@ export default Model.extend({
   props: {
     '@id': 'string',
     '@context': 'string',
-    '@type': 'string',
+    '@type': {
+           type : 'string',
+           required : 'true',
+           default : 'sc:Sequence',
+           test: function(value){
+                if (value !== 'sc:Sequence') {
+                    return "Value must equal 'sc:Sequence'.";
+                }
+                return false;
+            }
+           },
     label: 'string',
     viewingDirection: 'string',
     viewingHint: 'string',

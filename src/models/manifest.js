@@ -21,7 +21,17 @@ export default Model.extend({
     _id: 'string',
     '@id': 'string',
     '@context': 'string',
-    '@type': 'string',
+    '@type': {
+           type : 'string',
+           required : 'true',
+           default : 'sc:Manifest',
+           test: function(value){
+                if (value !== 'sc:Manifest') {
+                    return "Value must equal 'sc:Manifest'.";
+                }
+                return false;
+            }
+           },
     label: 'string',
     thumbnail: 'string',
     viewingHint: 'string',

@@ -19,7 +19,17 @@ export default Model.extend({
   props: {
     _id: 'string',
     '@id': 'string',
-    '@type': 'string',
+    '@type': {
+           type : 'string',
+           required : 'true',
+           default : 'sc:Collection',
+           test: function(value){
+                if (value !== 'sc:Collection') {
+                    return "Value must equal 'sc:Collection'.";
+                }
+                return false;
+            }
+           },
     label: 'string',
     logo: 'string',
     license: 'string',

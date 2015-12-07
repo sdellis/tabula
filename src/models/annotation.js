@@ -7,7 +7,17 @@ export default Model.extend({
   props: {
     '@id': 'string',
     '@context': 'string',
-    '@type': 'string',
+    '@type': {
+           type : 'string',
+           required : 'true',
+           default : 'oa:Annotation',
+           test: function(value){
+                if (value !== 'oa:Annotation') {
+                    return "Value must equal 'oa:Annotation'.";
+                }
+                return false;
+            }
+           },
     motivation: 'string',
     about: 'string'
   },

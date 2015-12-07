@@ -11,8 +11,21 @@
     "yolo": "npm run build && npm run deploy",
     "test": "standard"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sdellis/tabula"
+  },
+  "keywords": [
+    "iiif",
+    "webapp",
+    "ampersand",
+    "backbone",
+    "slideshow",
+    "es6",
+    "tape"
+  ],
+  "author": "shaun@sdellis.com",
+  "license": "MIT",
   "dependencies": {
     "ampersand-app": "^1.0.4",
     "ampersand-model": "^6.0.2",
@@ -24,6 +37,7 @@
     "babel": "^5.1.13",
     "babel-core": "^5.1.13",
     "babel-loader": "^5.0.0",
+    "babel-polyfill": "^6.3.14",
     "css-loader": "^0.12.0",
     "file-loader": "^0.8.1",
     "hjs-webpack": "^2.0.1",
@@ -31,6 +45,7 @@
     "manifesto.js": "^0.1.17",
     "node-uuid": "^1.4.7",
     "octicons": "^3.1.0",
+    "page-label-generator": "0.0.1",
     "qs": "^6.0.0",
     "react": "^0.13.2",
     "react-hot-loader": "^1.2.5",

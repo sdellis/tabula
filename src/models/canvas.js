@@ -8,7 +8,17 @@ export default Model.extend({
   props: {
     '@id': 'string',
     '@context': 'string',
-    '@type': 'string',
+    '@type': {
+           type : 'string',
+           required : 'true',
+           default : 'sc:Canvas',
+           test: function(value){
+                if (value !== 'sc:Canvas') {
+                    return "Value must equal 'sc:Canvas'.";
+                }
+                return false;
+            }
+           },
     label: 'string',
     height: 'number',
     width: 'number'

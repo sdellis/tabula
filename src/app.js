@@ -1,4 +1,6 @@
+import babelPolyfill from 'babel-polyfill'
 import app from 'ampersand-app'
+import pageLabels from 'page-label-generator'
 import styles from './styles/main.styl'
 import icons from '../node_modules/octicons/octicons/octicons.css'
 import Router from './router'
@@ -17,6 +19,7 @@ app.extend({
     this.me.fetchInitialData()
     this.router = new Router()
     this.router.history.start()
+    this.gen = pageLabels.pageLabelGenerator();
   }
 })
 

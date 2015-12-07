@@ -7,7 +7,17 @@ export default Model.extend({
   props: {
     '@id': 'string',
     '@context': 'string',
-    '@type': 'string'
+    '@type': {
+           type : 'string',
+           required : 'true',
+           default : 'sc:AnnotationList',
+           test: function(value){
+                if (value !== 'sc:AnnotationList') {
+                    return "Value must equal 'sc:AnnotationList'.";
+                }
+                return false;
+            }
+           },
   },
 
   collections: {
