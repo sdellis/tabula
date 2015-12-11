@@ -8,16 +8,16 @@ export default Model.extend({
     '@id': 'string',
     '@context': 'string',
     '@type': {
-           type : 'string',
-           required : 'true',
-           default : 'oa:Annotation',
-           test: function(value){
-                if (value !== 'oa:Annotation') {
-                    return "Value must equal 'oa:Annotation'.";
-                }
-                return false;
-            }
-           },
+      type: 'string',
+      required: 'true',
+      default: 'oa:Annotation',
+      test: function(value){
+        if (value !== 'oa:Annotation') {
+          return "Value must equal 'oa:Annotation'.";
+        }
+          return false;
+      }
+    },
     motivation: 'string',
     about: 'string'
   },

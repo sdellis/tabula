@@ -51,11 +51,15 @@ export default Model.extend({
       deps: ['metadata'],
       fn () {
         var s = ''
-        this.metadata.forEach(function(md) {
+
+        if( this.metadata ) {
+          this.metadata.forEach(function(md) {
               if(md.label === 'Subjects'){
                 s = md.value.join(', ')
               }
       	     })
+        }
+
         return s
       }
     },

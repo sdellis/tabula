@@ -19,7 +19,7 @@ app.extend({
     this.me.fetchInitialData()
     this.router = new Router()
     this.router.history.start()
-    this.gen = pageLabels.pageLabelGenerator();
+    this.gen = pageLabels.pageLabelGenerator()
   }
 })
 

@@ -13,8 +13,7 @@ export default React.createClass({
   getInitialState () {
     const {name, payload} = this.props.slide
     return {
-      name: name,
-      payload: payload
+      name: name
     }
   },
 
