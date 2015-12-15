@@ -40,6 +40,9 @@ Tabula provides an example of authenticating with [GitHub's OAuth implementation
 ### GitHub as an Annotation "Server"/Endpoint
 One reason we have gone with GitHub as an authentication example is because GitHub can be used, with some facade-pattern-based middleware (currently vaporware), as an annotation endpoint.  The current options for annotation servers with authentication is sparse, and can be hard to configure.  GitHub provides a fairly simple API that can be used to create annotations.  While one may authenticate using GitHub credentials, the ability to use it as an annotation store is still under development.
 
+### Tests
+npm install -g phantomjs2
+
 ### Contributing
 Contributions will be welcome after the initial release.  Tabula uses [Standard](http://standardjs.com/) to enforce a simple code style.  Unit tests are coming! They are the last step before official release of 1.0.0.  All pull requests will need to pass tests and adhere to the Standard style guide.
 
