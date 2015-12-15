@@ -8,16 +8,16 @@ export default Model.extend({
     '@id': 'string',
     '@context': 'string',
     '@type': {
-           type : 'string',
-           required : 'true',
-           default : 'sc:Sequence',
-           test: function(value){
-                if (value !== 'sc:Sequence') {
-                    return "Value must equal 'sc:Sequence'.";
-                }
-                return false;
-            }
-           },
+      type: 'string',
+      required: 'true',
+      default: 'sc:Sequence',
+      test: function (value) {
+        if (value !== 'sc:Sequence') {
+          return "Value must equal 'sc:Sequence'."
+        }
+        return false
+      }
+    },
     label: 'string',
     viewingDirection: 'string',
     viewingHint: 'string',

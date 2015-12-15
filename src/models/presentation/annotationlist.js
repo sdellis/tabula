@@ -8,16 +8,16 @@ export default Model.extend({
     '@id': 'string',
     '@context': 'string',
     '@type': {
-           type : 'string',
-           required : 'true',
-           default : 'sc:AnnotationList',
-           test: function(value){
-                if (value !== 'sc:AnnotationList') {
-                    return "Value must equal 'sc:AnnotationList'.";
-                }
-                return false;
-            }
-           },
+      type: 'string',
+      required: 'true',
+      default: 'sc:AnnotationList',
+      test: function (value) {
+        if (value !== 'sc:AnnotationList') {
+          return "Value must equal 'sc:AnnotationList'."
+        }
+        return false
+      }
+    }
   },
 
   collections: {

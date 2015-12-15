@@ -31,10 +31,9 @@ export default Model.extend({
     return !this.saved
   },
 
-  parse: function(response){
-
+  parse: function (response) {
     response.services = []
-    if(!Array.isArray(response.service)){
+    if (!Array.isArray(response.service)) {
       response.services.push(response.service)
     } else {
       response.services = response.service

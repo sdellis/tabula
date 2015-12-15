@@ -1,19 +1,16 @@
 import Collection from 'ampersand-rest-collection'
-import iiifCollection from './collection'
-import githubMixin from '../helpers/github-mixin'
-import config from '../config'
+import IIIFCollection from './collection'
 
-//export default Collection.extend(githubMixin, {
 export default Collection.extend({
   url: '', // some collection store
 
-  model: iiifCollection,
+  model: IIIFCollection,
 
   getById (id) {
     let model = this.findWhere({_id: id})
 
     if (!model) {
-      model = new iiifCollection({_id: id})
+      model = new IIIFCollection({_id: id})
     }
 
     model.fetch()

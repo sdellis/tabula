@@ -11,11 +11,11 @@ export default Model.extend({
       type: 'string',
       required: 'true',
       default: 'oa:Annotation',
-      test: function(value){
+      test: function (value) {
         if (value !== 'oa:Annotation') {
-          return "Value must equal 'oa:Annotation'.";
+          return "Value must equal 'oa:Annotation'."
         }
-          return false;
+        return false
       }
     },
     motivation: 'string',
@@ -41,12 +41,12 @@ export default Model.extend({
     return !this.saved
   },
 
-  parse: function(response){
-    response.about = response.on //remap an oddly named attribute
+  parse: function (response) {
+    response.about = response.on // remap an oddly named attribute
     delete response.on
 
     response.resources = []
-    if(!Array.isArray(response.resource)){
+    if (!Array.isArray(response.resource)) {
       response.resources.push(response.resource)
     } else {
       response.resources = response.resource

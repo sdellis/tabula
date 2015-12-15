@@ -20,16 +20,16 @@ export default Model.extend({
     '@id': 'string',
     '@context': 'string',
     '@type': {
-           type : 'string',
-           required : 'true',
-           default : 'sc:Manifest',
-           test: function(value){
-                if (value !== 'sc:Manifest') {
-                    return "Value must equal 'sc:Manifest'.";
-                }
-                return false;
-            }
-           },
+      type: 'string',
+      required: 'true',
+      default: 'sc:Manifest',
+      test: function (value) {
+        if (value !== 'sc:Manifest') {
+          return "Value must equal 'sc:Manifest'."
+        }
+        return false
+      }
+    },
     label: 'string',
     thumbnail: 'string',
     viewingHint: 'string',
@@ -52,34 +52,34 @@ export default Model.extend({
       fn () {
         var s = ''
 
-        if( this.metadata ) {
-          this.metadata.forEach(function(md) {
-              if(md.label === 'Subjects'){
-                s = md.value.join(', ')
-              }
-      	     })
+        if (this.metadata) {
+          this.metadata.forEach(function (md) {
+            if (md.label === 'Subjects') {
+              s = md.value.join(', ')
+            }
+          })
         }
 
         return s
       }
     },
-    /****
+    /* ***
     // The getManifest() method is for demo purposes, showing how one can use
     // the Manifesto library within this app by attaching a Manifesto object,
     // with all its methods to this model.
     // i.e. this.manifest.getLabel()
-    ****/
+    *** */
     getManifest: {
       deps: ['_id'],
       fn () {
         var _this = this
-        manifesto.loadManifest(config.manifestStore + '/' + this._id).then(function(manifest) {
-            _this.manifest = manifesto.create(manifest)
-            return _this.manifest
-          },
-          function(error) {
-            console.error("Failed!", error);
-          });
+        manifesto.loadManifest(config.manifestStore + '/' + this._id).then(function (manifest) {
+          _this.manifest = manifesto.create(manifest)
+          return _this.manifest
+        },
+        function (error) {
+          console.error('Failed!', error)
+        })
         this.manifest = _this.manifest
       }
     }

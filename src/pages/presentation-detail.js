@@ -1,7 +1,5 @@
 import React from 'react'
 import ampersandMixin from 'ampersand-react-mixin'
-import manifesto from '../../node_modules/manifesto.js/dist/server/manifesto.js'
-// import Slide from '../components/slide'
 
 export default React.createClass({
   mixins: [ampersandMixin],
@@ -31,7 +29,7 @@ export default React.createClass({
          <ul>
          {presentation.manifest.getSequences().map((sequence) => {
            let label = 'Untitled Slide Group'
-           if ( !sequence.getLabel() === 'undefined' ) { label = sequence.getLabel() }
+           if (!sequence.getLabel() === 'undefined') { label = sequence.getLabel() }
            return (
              <li><strong>{label}</strong> : {sequence.getTotalCanvases()} slides</li>
            )
@@ -40,10 +38,10 @@ export default React.createClass({
          <p>
           <button onClick={this.onAddClick} className='button'>Add a Slide</button>
          </p>
-         <ul className="sequence">
+         <ul className='sequence'>
          {presentation.manifest.getSequences()[0].getThumbs(200).map((thumb) => {
            return (
-            <li className="slide"><img src={thumb.uri}/></li>
+            <li className='slide'><img src={thumb.uri}/></li>
            )
          })}
          </ul>

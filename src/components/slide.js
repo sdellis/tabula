@@ -11,7 +11,7 @@ export default React.createClass({
   },
 
   getInitialState () {
-    const {name, payload} = this.props.slide
+    const {name} = this.props.slide
     return {
       name: name
     }
@@ -55,7 +55,7 @@ export default React.createClass({
 
   render () {
     const {slide} = this.props
-    const {name, payload} = this.state
+    const {name} = this.state
     let markup
 
     if (slide.editing) {

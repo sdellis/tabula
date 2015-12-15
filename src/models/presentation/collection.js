@@ -1,6 +1,6 @@
 import Model from 'ampersand-model'
 import ManifestCollection from './manifest-collection'
-import iiifCollection from './collection-collection'
+import IIIFCollection from './collection-collection'
 import ServiceCollection from './service-collection'
 import config from '../config'
 
@@ -20,16 +20,16 @@ export default Model.extend({
     _id: 'string',
     '@id': 'string',
     '@type': {
-           type : 'string',
-           required : 'true',
-           default : 'sc:Collection',
-           test: function(value){
-                if (value !== 'sc:Collection') {
-                    return "Value must equal 'sc:Collection'.";
-                }
-                return false;
-            }
-           },
+      type: 'string',
+      required: 'true',
+      default: 'sc:Collection',
+      test: function (value) {
+        if (value !== 'sc:Collection') {
+          return "Value must equal 'sc:Collection'."
+        }
+        return false
+      }
+    },
     label: 'string',
     logo: 'string',
     license: 'string',
@@ -45,7 +45,7 @@ export default Model.extend({
 
   collections: {
     manifests: ManifestCollection,
-    collections: iiifCollection,
+    collections: IIIFCollection,
     services: ServiceCollection
   },
 
@@ -56,5 +56,5 @@ export default Model.extend({
         return 'collections/' + this._id
       }
     }
-
+  }
 })

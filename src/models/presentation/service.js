@@ -23,5 +23,5 @@ export default Model.extend({
   isNew () {
     return !this.saved
   }
-  
+
 })

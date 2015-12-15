@@ -1,4 +1,4 @@
-import babelPolyfill from 'babel-polyfill'
+import 'babel-polyfill'
 import app from 'ampersand-app'
 import pageLabels from 'page-label-generator'
 import styles from './styles/main.styl'
