@@ -9,8 +9,8 @@
     "build": "NODE_ENV=production webpack",
     "deploy": "surge -p public -d tabula.surge.sh",
     "yolo": "npm run build && npm run deploy",
-    "quiz": "babel-node node_modules/argg src/models/presentation/test/index.spec.js",
-    "test": "webpack src/models/presentation/test/index.spec.js public/tabula.tests.js | tape-run",
+    "test": "babel-node node_modules/argg src/models/presentation/test/index.spec.js",
+    "quiz": "webpack src/models/presentation/test/index.spec.js public/tabula.tests.js | tape-run",
     "lint": "standard"
   },
   "repository": {
