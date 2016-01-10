@@ -42,11 +42,11 @@ export default Router.extend({
   },
 
   presentations () {
-    this.renderPage(<PresentationsPage presentations={app.me.presentations}/>)
+    this.renderPage(<PresentationsPage presentations={app.me.presentations.manifests}/>)
   },
 
   presentationDetail (id) {
-    const presentation = app.me.presentations.getById(id)
+    const presentation = app.me.presentations.manifests.getById(id)
     this.renderPage(<PresentationDetailPage presentation={presentation}/>)
   },
 

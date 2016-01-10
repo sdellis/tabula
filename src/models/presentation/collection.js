@@ -1,52 +1,24 @@
-import Model from 'ampersand-model'
-import ManifestCollection from './manifest-collection'
-import IIIFCollection from './collection-collection'
-import ServiceCollection from './service-collection'
-import config from '../config'
+import {Collections} from 'tabula-rasa'
+import ManifestList from './manifest-collection'
+import uuid from 'node-uuid'
+import config from '../../config'
 
-export default Model.extend({
-
-  initialize () {
-    this.getManifest // load the manifesto object into this.manifest
-  },
-
-  idAttribute: '_id',
-
-  url () {
-    return config.manifestStore + '/' + this._id
-  },
+export default Collections.Collection.extend({
 
   props: {
-    _id: 'string',
-    '@id': 'string',
-    '@type': {
+    '_id': {
       type: 'string',
       required: 'true',
-      default: 'sc:Collection',
-      test: function (value) {
-        if (value !== 'sc:Collection') {
-          return "Value must equal 'sc:Collection'."
-        }
-        return false
-      }
-    },
-    label: 'string',
-    logo: 'string',
-    license: 'string',
-    viewingHint: 'string',
-    related: 'string',
-    seeAlso: 'string',
-    within: 'string',
-    thumbnail: 'string',
-    description: 'string',
-    attribution: 'string',
-    metadata: 'array'
+      default: uuid()
+    }
+  },
+
+  url () {
+    return config.manifestStore + '/collection.json'
   },
 
   collections: {
-    manifests: ManifestCollection,
-    collections: IIIFCollection,
-    services: ServiceCollection
+    manifests: ManifestList,
   },
 
   derived: {

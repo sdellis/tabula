@@ -2,6 +2,8 @@
 =============================================================================
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
+_"Show, don't tell."_
+
 Tabula is a "starter kit" for native web applications (aka, "single-page apps") that make use of the IIIF Presentation API.
 
 ## About tabula
