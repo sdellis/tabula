@@ -1,86 +1,50 @@
-import Model from 'ampersand-model'
+import {Manifest} from 'tabula-rasa'
 import manifesto from '../../../node_modules/manifesto.js/dist/server/manifesto.js'
-import SequenceCollection from './sequence-collection'
 import config from '../../config'
 
-export default Model.extend({
+export default Manifest.extend({
 
   initialize () {
     this.getManifest // load the manifesto object into this.manifest
   },
 
-  idAttribute: '_id',
-
   url () {
-    return config.manifestStore + '/' + this._id
-  },
-
-  props: {
-    _id: 'string',
-    '@id': 'string',
-    '@context': 'string',
-    '@type': {
-      type: 'string',
-      required: 'true',
-      default: 'sc:Manifest',
-      test: function (value) {
-        if (value !== 'sc:Manifest') {
-          return "Value must equal 'sc:Manifest'."
-        }
-        return false
-      }
-    },
-    label: 'string',
-    thumbnail: 'string',
-    viewingHint: 'string',
-    metadata: 'array'
-  },
-
-  collections: {
-    sequences: SequenceCollection
+    return config.manifestStore + '/' + this._id + '/manifest.json'
   },
 
   derived: {
+    foo: {
+      deps: ['_id'],
+      fn () {
+        return 'foo/' + this._id
+      }
+    },
     app_url: {
       deps: ['_id'],
       fn () {
         return 'presentations/' + this._id
       }
     },
-    subjects: {
-      deps: ['metadata'],
-      fn () {
-        var s = ''
-
-        if (this.metadata) {
-          this.metadata.forEach(function (md) {
-            if (md.label === 'Subjects') {
-              s = md.value.join(', ')
-            }
-          })
-        }
-
-        return s
-      }
-    },
     /* ***
     // The getManifest() method is for demo purposes, showing how one can use
     // the Manifesto library within this app by attaching a Manifesto object,
     // with all its methods to this model.
-    // i.e. this.manifest.getLabel()
+    // i.e. this.manifestation.getLabel()
     *** */
     getManifest: {
-      deps: ['_id'],
+      deps: ['@id'],
       fn () {
         var _this = this
-        manifesto.loadManifest(config.manifestStore + '/' + this._id).then(function (manifest) {
-          _this.manifest = manifesto.create(manifest)
-          return _this.manifest
+
+        manifesto.loadManifest(this['@id']).then(function (manifest) {
+          _this.manifestation = manifesto.create(manifest)
+          return _this.manifestation
         },
         function (error) {
           console.error('Failed!', error)
         })
-        this.manifest = _this.manifest
+
+        this.manifestation = _this.manifestation
       }
     }
   }

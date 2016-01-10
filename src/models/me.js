@@ -1,6 +1,6 @@
 import Model from 'ampersand-model'
 import RepoCollection from './annotation/repo-collection'
-import ManifestCollection from './presentation/manifest-collection'
+import Collection from './presentation/collection'
 import githubMixin from '../helpers/github-mixin'
 
 export default Model.extend(githubMixin, {
@@ -11,6 +11,9 @@ export default Model.extend(githubMixin, {
     this.on('change:token', this.onChangeToken)
   },
 
+  /* to-do: use a Gist to persist user data such as preferred language and
+  || possible endpoints to select content from
+  *****/
   props: {
     id: 'number',
     login: 'string',
@@ -22,8 +25,11 @@ export default Model.extend(githubMixin, {
   },
 
   collections: {
-    repos: RepoCollection,
-    presentations: ManifestCollection
+    repos: RepoCollection
+  },
+
+  children: {
+    presentations: Collection
   },
 
   onChangeToken () {

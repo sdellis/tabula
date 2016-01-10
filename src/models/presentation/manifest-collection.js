@@ -1,10 +1,8 @@
-import Collection from 'ampersand-rest-collection'
 import Manifest from './manifest'
+import {ManifestList} from 'tabula-rasa'
 import config from '../../config'
 
-export default Collection.extend({
-  url: config.manifestStore,
-
+export default ManifestList.extend({
   model: Manifest,
 
   getById (id) {
@@ -18,4 +16,5 @@ export default Collection.extend({
 
     return model
   }
+
 })

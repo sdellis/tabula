@@ -24,10 +24,10 @@ export default React.createClass({
 
     return (
       <div className='container'>
-         <h1>{presentation.manifest.getLabel()} Slides</h1>
+         <h1>{presentation.manifestation.getLabel()} Slides</h1>
          <p><strong>Subjects:</strong> {presentation.subjects}</p>
          <ul>
-         {presentation.manifest.getSequences().map((sequence) => {
+         {presentation.manifestation.getSequences().map((sequence) => {
            let label = 'Untitled Slide Group'
            if (!sequence.getLabel() === 'undefined') { label = sequence.getLabel() }
            return (
@@ -39,7 +39,7 @@ export default React.createClass({
           <button onClick={this.onAddClick} className='button'>Add a Slide</button>
          </p>
          <ul className='sequence'>
-         {presentation.manifest.getSequences()[0].getThumbs(200).map((thumb) => {
+         {presentation.manifestation.getSequences()[0].getThumbs(200).map((thumb) => {
            return (
             <li className='slide'><img src={thumb.uri}/></li>
            )
