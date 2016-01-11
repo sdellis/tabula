@@ -9067,7 +9067,7 @@
 	  'tabula.surge.sh': {
 	    clientId: '010379124ec4bf2e878a',
 	    gatekeeperUrl: 'https://tabula-production.herokuapp.com/authenticate',
-	    manifestStore: 'https://tabula.space/collections/manifests'
+	    manifestStore: 'https://tabula.space/collections/manifests/collection.json'
 	  }
 	})[window.location.hostname];
 
