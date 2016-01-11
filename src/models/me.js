@@ -17,7 +17,13 @@ export default Model.extend(githubMixin, {
   props: {
     id: 'number',
     login: 'string',
-    avatar_url: 'string'
+    avatar_url: 'string',
+    language: 'string',
+    endpoints: {
+      type: 'array',
+      required: 'true',
+      default: ['http://iiif.io/api/presentation/2.0/example/fixtures','https://tabula.space/collections/manifests','http://jsonblob.com/api/jsonBlob']
+    },
   },
 
   session: {
