@@ -4,7 +4,7 @@ import config from '../../config'
 
 export default ManifestList.extend({
   model: Manifest,
-
+  
   getById (id) {
     let model = this.findWhere({_id: id})
 

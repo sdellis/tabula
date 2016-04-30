@@ -22,8 +22,26 @@ export default Model.extend(githubMixin, {
     endpoints: {
       type: 'array',
       required: 'true',
-      default: ['http://iiif.io/api/presentation/2.0/example/fixtures','https://tabula.space/collections/manifests','http://jsonblob.com/api/jsonBlob']
-    },
+      default: function () {
+        return [
+          {
+            'label': 'IIIF Fixtures',
+            'value': 'http://iiif.io/api/presentation/2.0/example/fixtures'
+          },
+          {
+            'label': 'Localhost (Repono)',
+            'value': 'http://localhost:4000/collections/manifests'
+          },
+          {
+            'label': 'Tabula.Space',
+            'value': 'https://tabula.space/collections/manifests'
+          },
+          {
+            'label': 'JSON Blob',
+            'value': 'http://jsonblob.com/api/jsonBlob'
+          }]
+      }
+    }
   },
 
   session: {
