@@ -23,10 +23,11 @@ export default React.createClass({
   },
 
   onEndpointChange(event) {
-    const {presentations} = this.props
-    const {endpoints} = this.props
+    // const {presentations} = this.props
+    // const {endpoints} = this.props
     this.setState({value: event.target.value})
-    // presentations.refresh(event.target.value)
+    this.props.presentations.refresh(event.target.value)
+    this.setState({presentations: this.props.presentations})
   },
 
   render () {
@@ -48,7 +49,11 @@ export default React.createClass({
          <button onClick={this.onLoadClick} className='button'>Load Collection</button>
          <button onClick={this.onSaveClick} className='button'>Save Collection</button>
         </p>
-        <PresentationList presentations={presentations.manifests.models} />
+        <ul>
+        {this.props.presentations.manifests.models.map(function(presentation) {
+           return <PresentationList key={presentation['@id']} presentation={presentation}/>;
+        })}
+        </ul>
       </div>
     )
   }

@@ -7,10 +7,11 @@ export default React.createClass({
   displayName: 'Presentation',
 
   render () {
-    const {presentations} = this.props
-    // console.log(presentations);
-
+    const {presentation} = this.props
+    return <li><a href={presentation.app_url}>{presentation.label[0]['@value']}</a></li>;
+    /*
     return (
+
       <ul>
 
         {presentations.map((presentation) => {
@@ -24,6 +25,6 @@ export default React.createClass({
 
       </ul>
     )
-
+    */
   }
 })

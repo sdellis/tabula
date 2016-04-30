@@ -24,13 +24,14 @@ export default Model.extend(githubMixin, {
       required: 'true',
       default: function () {
         return [
+          /*
           {
             'label': 'IIIF Fixtures',
             'value': 'http://iiif.io/api/presentation/2.0/example/fixtures'
           },
           {
             'label': 'Localhost (Repono)',
-            'value': 'http://localhost:4000/collections/manifests'
+            'value': 'http://localhost:3000/collections/manifests'
           },
           {
             'label': 'Tabula.Space',
@@ -39,7 +40,13 @@ export default Model.extend(githubMixin, {
           {
             'label': 'JSON Blob',
             'value': 'http://jsonblob.com/api/jsonBlob'
-          }]
+          }
+          */
+          {
+            'label': 'Localhost (Repono)',
+            'value': 'http://localhost:3000/collections/manifests'
+          }
+          ]
       }
     }
   },
